@@ -1,4 +1,4 @@
-#ifndef _HEADER_GUARD
-#define 
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
 #endif
