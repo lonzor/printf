@@ -3,20 +3,18 @@
 
 /**
  * struct ops - structure for each flag for printf to process
- *
- *
- *
+ * @spec: the specifier being passed
+ * @flags: detects and chooses the function to use
+ * Return: int = the length of the string printed
  **/
-struct ops
+typedef struct ops
 {
+	char *spec;
 	int (*flags)(va_list)
-};
-typedef struct ops ops_t;
+} ops_t;
 
 /*function prototypes*/
 int _printf(const char *format, ...);
-int _strlen(char *s);
-void _puts(char *str);
 int _putchar(char c);
 int char_func(va_list list);
 int string_func(va_list list);
