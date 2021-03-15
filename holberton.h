@@ -1,5 +1,5 @@
-#ifndef _HEADER_GUARD
-#define 
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
 /**
  * struct ops - structure for each flag for printf to process
