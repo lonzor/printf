@@ -47,13 +47,3 @@ int percent_func(va_list list)
 		return (*str);
 	return (*str);
 }
-
-/**
- * i'm not sure we need two different functions for double and int
- * we need to somehow figure out how to get the length of the number
- * i'm not sure if we should that in the function here or as a
- * seperate function.
- **/
-int int_func(va_list list)
-{
-}
