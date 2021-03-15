@@ -18,4 +18,8 @@ int _printf(const char *format, ...);
 int _strlen(char *s);
 void _puts(char *str);
 int _putchar(char c);
+int char_func(va_list list);
+int string_func(va_list list)
+int percent_func(va_list list)
+int int_func(va_list args);
 #endif
