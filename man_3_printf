@@ -1,0 +1,11 @@
+.TH man 3 "Date" "Version 1" "printf man page"
+.SH NAME
+.B printf
+- Creating a version of printf function.
+.SH SYNOPSIS
+.SH DESCRIPTION
+.SH HOW TO USE
+.SH FLAGS/SPECIFIERS
+.SH BUGS
+.SH AUTHORS
+Lonzo Rust and Derek Clemens
