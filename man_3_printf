@@ -6,6 +6,14 @@
 .SH DESCRIPTION
 .SH HOW TO USE
 .SH FLAGS/SPECIFIERS
+.RS 3
+c: This flag is used to print characters
+.RS 0
+s: This flag is used to print strings
+.RS 0
+d: This flag is used to print doubles
+.RS 0
+i: This flag is used to print integers
 .SH BUGS
 .SH AUTHORS
 Lonzo Rust and Derek Clemens
