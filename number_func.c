@@ -6,7 +6,7 @@
   */
 int int_func(va_list args)
 {
-	int div 1000000000, olen = 0, min_true = 0, n;
+	int div = 1000000000, olen = 0, min_true = 0, n;
 
 	n = va_arg(args, int);
 

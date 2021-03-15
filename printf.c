@@ -7,8 +7,9 @@
  **/
 int _printf(const char *format, ...)
 {
-	int char_count, j, i;
-	va_list agrs;
+	int char_count= 0, j, i;
+	va_list args;
+	
 	ops_t flags_list[] = {
 		{"c", char_func},
 		{"s", str_func},
@@ -25,14 +26,15 @@ int _printf(const char *format, ...)
 		j = 0;
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-
+			i++;
 			while (j < 5 && flags_list[j].spec[0] != format[i]) /* check type */
 				j++;
 			if (j < 5) /* flag list true */
-				char_count += flags_list[j].ops(args);
+				flags_list[j].flags(args);
 		}
 		i += 2;
 	}
-	va_end(ap);
+	_putchar('\n');
+	va_end(args);
 	return (char_count);
 }
