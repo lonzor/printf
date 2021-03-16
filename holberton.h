@@ -23,4 +23,5 @@ int char_func(va_list list);
 int str_func(va_list list);
 int percent_func(va_list list);
 int int_func(va_list args);
+int rev_func(va_list args);
 #endif

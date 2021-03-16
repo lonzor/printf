@@ -18,7 +18,6 @@ int _putchar(int c)
 /**
  * char_func - flag that corresponds to printing chars
  * @args: args
- * c_count: amount of chars printed
  * Return: int amount of characters printed
  **/
 int char_func(va_list args)
@@ -30,9 +29,8 @@ int char_func(va_list args)
 }
 
 /**
- * string_func - flag that corresponds to printing str
+ * str_func - flag that corresponds to printing str
  * @args: args
- * @s_count: amount of chars printed
  * Return: int amount of chars printed
  **/
 int str_func(va_list args)
@@ -47,20 +45,4 @@ int str_func(va_list args)
 	for (i = 0; str[i] != '\0'; i++, s_count++)
 		_putchar(str[i]);
 	return (s_count);
-}
-
-/**
- * percent_func - flag that corresponds to printing %
- * @args: args
- * Return: they symbol %
- **/
-int percent_func(va_list args)
-{
-	if (va_arg(args, int) == '%')
-	{
-		printf("calls percent\n");
-		_putchar(37);
-		return (1);
-	}
-	return (0);
 }
