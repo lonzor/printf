@@ -2,9 +2,13 @@
 .SH NAME
 .B printf
 - Creating a version of printf function.
-.SH SYNOPSIS
 .SH DESCRIPTION
+This re-creation of printf takes input and finds a formatting flag after the percent sign (%).
+The flag determines how the text is formatted when printed.
 .SH HOW TO USE
+Compilation:
+.RS 3
+gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
 .SH FLAGS/SPECIFIERS
 .RS 3
 c: This flag is used to print characters
@@ -14,6 +18,8 @@ s: This flag is used to print strings
 d: This flag is used to print doubles
 .RS 0
 i: This flag is used to print integers
+.RS 0
+r: This flag is used to reverse a string
 .SH BUGS
 .SH AUTHORS
 Lonzo Rust and Derek Clemens
