@@ -56,11 +56,11 @@ int str_func(va_list args)
  **/
 int percent_func(va_list args)
 {
-	char *str;
-
-	str = va_arg(args, char *);
-
-	if (*str == '%')
+	if (va_arg(args, int) == '%')
+	{
+		printf("calls percent\n");
+		_putchar(37);
 		return (1);
+	}
 	return (0);
 }
