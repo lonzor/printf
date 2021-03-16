@@ -13,28 +13,37 @@ int _printf(const char *format, ...)
 	ops_t flags_list[] = {
 		{"c", char_func},
 		{"s", str_func},
-		{"%", percent_func},
+		/* {"%", percent_func},*/
 		{"d", int_func},
 		{"i", int_func},
 	};
 
 	va_start(args, format);
-	i = 0;
-	while (format != NULL && format[i] != '\0') /* passing arg */
+	if (format == NULL)
+		return (-1);
+	for (i = 0; format[i] != 00; i++)
 	{
-		/* check for % && j + 1 != '\0' */
 		j = 0;
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
-			i++;
-			while (j < 5 && flags_list[j].spec[0] != format[i]) /* check type */
+			while (j < 5 && flags_list[j].spec[0] != format[i + 1])  /* check type */
 				j++;
+			if (format[i + 1] == '%')
+				i++;
 			if (j < 5) /* flag list true */
-				flags_list[j].flags(args);
+			{
+				char_count += flags_list[j].flags(args);
+				i += 2;
+			}
+		}/*prints char if no spec is passed*/
+		if (format[i] != '\0')
+		{
+			_putchar(format[i]);
+			char_count++;
 		}
-		i += 2;
+		else
+			break;
 	}
-	_putchar('\n');
 	va_end(args);
 	return (char_count);
 }

@@ -19,13 +19,14 @@ int int_func(va_list args)
 		}
 		_putchar('-'); /*prints - for neg number*/
 		olen++;
+		n = -n;
 	}
 	while (div / 10 != 0)
 	{
 		if (n / div != 0)
 		{
-		_putchar('0' + ((n / div) % 10)); /*printing numbers starting from the left most placement*/
-		olen++;
+			_putchar('0' + ((n / div) % 10)); /*printing numbers starting from the left most placement*/
+			olen++;
 		}
 		div /= 10;
 	}
