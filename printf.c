@@ -22,20 +22,20 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != 00; i++)
 	{
 		j = 0;
+
 		if (format[i] == '%')
 		{ /* specifiers are compared here */
 			while (j < 5 && flags_list[j].spec[0] != format[i + 1])
 				j++;
-			if (format[i + 1] == '%')
-				i++;
 			if (j < 5) /* flag list true */
-			{
-				char_count += flags_list[j].flags(args);
+			{char_count += flags_list[j].flags(args);
 				i += 2;
 			}
-		} /*prints char if no spec is passed*/
+			if (format[i + 1] == '%') /* if %% is passed */
+				i++; /*format[i] will print % at line 42*/
+		}
 		if (format[i] != '\0')
-		{
+		{ /* printing all the chars in args */
 			_putchar(format[i]);
 			char_count++;
 		}
