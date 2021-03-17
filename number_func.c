@@ -12,25 +12,26 @@ int int_func(va_list args)
 
 	if (n < 0)
 	{
-		if (n == INT_MIN) /* If true min is flag for last digit printed*/
+		if (n == INT_MIN) /*If true min is flag for last digit printed*/
 		{
 			min_true = 1;
-			n++;
+			n++; /* incriments INT_MIN to -2147483647 for pos flip*/
 		}
 		_putchar('-'); /*prints - for neg number*/
 		olen++;
-		n = -n;
+		n = -n; /*flips neg num to positive for dividing*/
 	}
 	while (div / 10 != 0)
 	{
 		if (n / div != 0)
-		{
-			_putchar('0' + ((n / div) % 10)); /*printing numbers starting from the left most placement*/
+		{ /*printing numbers starting from the left most placement*/
+			_putchar((n / div) % 10);
 			olen++;
 		}
 		div /= 10;
 	}
-	_putchar('0' + (min_true == 1 ? 8 : n % 10)); /* printing last number 8 if min_true or other if not*/
+	/* printing last number 8 if min_true = 1 else n %= 10*/
+	_putchar('0' + (min_true == 1 ? 8 : n % 10));
 	olen++;
-	return (olen); /*returns the length of the number (including - if neg)*/
+	return (olen); /*return the number of char printed*/
 }
