@@ -25,7 +25,7 @@ int int_func(va_list args)
 	{
 		if (n / div != 0)
 		{ /*printing numbers starting from the left most placement*/
-			_putchar((n / div) % 10);
+			_putchar('0' + ((n / div) % 10));
 			olen++;
 		}
 		div /= 10;
